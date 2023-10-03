@@ -7,7 +7,7 @@ const Todoform: todoForm[] = [
   {
     label: "Enter todo :",
     placeHolder: "Enter Todo",
-    name:"value",
+    name: "value",
     value: "",
     type: "text",
     className: "form-control",
@@ -15,7 +15,7 @@ const Todoform: todoForm[] = [
   {
     label: "isCompleted",
     placeHolder: "",
-    name:"isCompelete",
+    name: "isCompelete",
     value: false,
     type: "checkbox",
     className: "",
@@ -23,15 +23,16 @@ const Todoform: todoForm[] = [
 ];
 
 export interface todosTypes {
-  value?: string
-  isCompelete?: boolean
+  value?: string;
+  isCompelete?: boolean;
+  id: number|null;
 }
 
 export interface handleChangeTypes {
   onMainHandleChange: (data: todosTypes) => void;
 }
 
-const Home = ({ onMainHandleChange }:handleChangeTypes) => {
+const Home = ({ onMainHandleChange }: handleChangeTypes) => {
   return (
     <Container className="mt-3">
       <CardsData>

@@ -17,8 +17,12 @@ function Header() {
               List
             </Link>
 
-            <Link to="/list" className="mx-2">
+            <Link to="/completeTask" className="mx-2">
               Completed Task
+            </Link>
+
+            <Link to="/completeTask" className="mx-2">
+              Delete History
             </Link>
           </Nav>
         </Navbar.Collapse>
