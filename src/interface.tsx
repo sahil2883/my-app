@@ -1,7 +1,8 @@
 export interface todoForm {
   label: string;
   placeHolder: string;
-  value: string;
+  name: string;
+  value: string | boolean;
   type: string;
   className?: string;
 }

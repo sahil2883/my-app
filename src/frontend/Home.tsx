@@ -3,28 +3,42 @@ import CardsData from "./CardsData";
 import FormsData from "./FormsData";
 import { todoForm } from "../interface";
 
-const Todoform:todoForm[] = [
+const Todoform: todoForm[] = [
   {
     label: "Enter todo :",
     placeHolder: "Enter Todo",
-    value: "todo",
-    type:"text",
-    className:""
+    name:"value",
+    value: "",
+    type: "text",
+    className: "form-control",
   },
   {
-    label: "Enter todo :",
-    placeHolder: "Enter Todo",
-    value: "todo",
-    type:"checkbox",
-    className:""
+    label: "isCompleted",
+    placeHolder: "",
+    name:"isCompelete",
+    value: false,
+    type: "checkbox",
+    className: "",
   },
 ];
 
-const Home = () => {
+export interface todosTypes {
+  value?: string
+  isCompelete?: boolean
+}
+
+export interface handleChangeTypes {
+  onMainHandleChange: (data: todosTypes) => void;
+}
+
+const Home = ({ onMainHandleChange }:handleChangeTypes) => {
   return (
     <Container className="mt-3">
       <CardsData>
-        <FormsData formValues={Todoform}/>
+        <FormsData
+          formValues={Todoform}
+          onMainHandleChange={onMainHandleChange}
+        />
       </CardsData>
     </Container>
   );
