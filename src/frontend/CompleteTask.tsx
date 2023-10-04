@@ -13,7 +13,7 @@ const CompleteTask = (props: todostypes) => {
         <td>
           <button
             className="btn btn-sm btn-danger"
-            onClick={() => props?.handleDelete(ele?.id)}
+            onClick={() => props?.handleDelete(ele?.id!)}
           >
             Delete
           </button>
