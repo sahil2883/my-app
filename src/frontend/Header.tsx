@@ -11,7 +11,7 @@ function Header() {
           <Link to="/">TODO LIST</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav"> 
           <Nav className="me-auto">
             <Link to="/lists" className="mx-2">
               List
