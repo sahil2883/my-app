@@ -14,14 +14,28 @@ function App() {
     alert("successfully Added");
   };
 
-  const handleDelete = (id: number | null) => {
+  const handleDelete = (id: number) => {
     const data = todo.filter((ele) => ele?.id !== id);
     setTodos(data);
   };
 
+  const onHandleChange = (data:todosTypes):void => {
+    
+    const datas = todo?.map((ele) => {
+      if (ele?.id === data?.id) {
+        return data;
+      } else {
+        return ele;
+      }
+    });
+
+    setTodos(datas);
+  };
+
+
   // const handleEdit = (id: number | null) => {
   //   const data = todo?.map((ele)=>{
-     
+
   //   })
   // };
   return (
@@ -34,7 +48,7 @@ function App() {
         />
         <Route
           path="/lists"
-          element={<Lists todos={todo} handleDelete={handleDelete} />}
+          element={<Lists todos={todo} handleDelete={handleDelete} onHandleChange={onHandleChange} />}
         />
         <Route
           path="/completeTask"

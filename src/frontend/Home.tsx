@@ -25,7 +25,7 @@ const Todoform: todoForm[] = [
 export interface todosTypes {
   value?: string;
   isCompelete?: boolean;
-  id: number|null;
+  id?: number|null;
 }
 
 export interface handleChangeTypes {
