@@ -5,6 +5,7 @@ import Home, { todosTypes } from "./frontend/Home";
 import Lists from "./frontend/Lists";
 import { useState } from "react";
 import CompleteTask from "./frontend/CompleteTask";
+import HistoryData from "./frontend/HistoryData";
 
 function App() {
   const [todo, setTodos] = useState<[] | todosTypes[]>([]);
@@ -19,8 +20,7 @@ function App() {
     setTodos(data);
   };
 
-  const onHandleChange = (data:todosTypes):void => {
-    
+  const onHandleChange = (data: todosTypes): void => {
     const datas = todo?.map((ele) => {
       if (ele?.id === data?.id) {
         return data;
@@ -31,7 +31,6 @@ function App() {
 
     setTodos(datas);
   };
-
 
   // const handleEdit = (id: number | null) => {
   //   const data = todo?.map((ele)=>{
@@ -48,12 +47,20 @@ function App() {
         />
         <Route
           path="/lists"
-          element={<Lists todos={todo} handleDelete={handleDelete} onHandleChange={onHandleChange} />}
+          element={
+            <Lists
+              todos={todo}
+              handleDelete={handleDelete}
+              onHandleChange={onHandleChange}
+            />
+          }
         />
         <Route
           path="/completeTask"
           element={<CompleteTask todos={todo} handleDelete={handleDelete} />}
         />
+
+        <Route path="/HistoryData" element={<HistoryData />} />
       </Routes>
     </BrowserRouter>
   );

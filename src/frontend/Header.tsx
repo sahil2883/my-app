@@ -21,7 +21,7 @@ function Header() {
               Completed Task
             </Link>
 
-            <Link to="/completeTask" className="mx-2">
+            <Link to="/HistoryData" className="mx-2">
               Delete History
             </Link>
           </Nav>
