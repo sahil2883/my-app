@@ -13,7 +13,8 @@ const FormsData = ({ formValues, onMainHandleChange }: Formdatavalues) => {
   const [todo, setTodo] = useState<todosTypes>({
     value: "",
     isCompelete: false,
-    id:0
+    id: 0,
+    isDelete: 0,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -22,11 +23,16 @@ const FormsData = ({ formValues, onMainHandleChange }: Formdatavalues) => {
   };
 
   const handleAdd = (): void => {
-    onMainHandleChange({ value: todo?.value, isCompelete: todo?.isCompelete,id:Date.now() });
+    onMainHandleChange({
+      value: todo?.value,
+      isCompelete: todo?.isCompelete,
+      isDelete: todo?.isDelete,
+      id: Date.now(),
+    });
     setTodo({
       value: "",
       isCompelete: false,
-      id:0
+      id: 0,
     });
   };
 

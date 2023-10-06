@@ -24,7 +24,9 @@ const Lists = (props: todostypes) => {
   const theadData = ["S.no", "Tasks", "Edit", "Delete"];
 
   const tbodyData = (): JSX.Element[] => {
-    const data = props?.todos?.filter((ele) => !ele?.isCompelete);
+    const data = props?.todos?.filter(
+      (ele) => !ele?.isCompelete && ele?.isDelete === 0
+    );
     return data?.map((ele, index) => (
       <tr key={index}>
         <td>{index + 1}</td>
