@@ -16,7 +16,17 @@ function App() {
   };
 
   const handleDelete = (id: number) => {
-    const data = todo.filter((ele) => ele?.id !== id);
+    const data = todo.map((ele) => {
+      if (ele?.id === id) {
+        return {
+          ...ele,
+          isDelete: 1,
+          deleteDate:new Date()
+        };
+      } else {
+        return ele;
+      }
+    });
     setTodos(data);
   };
 
@@ -60,7 +70,7 @@ function App() {
           element={<CompleteTask todos={todo} handleDelete={handleDelete} />}
         />
 
-        <Route path="/HistoryData" element={<HistoryData />} />
+        <Route path="/HistoryData" element={<HistoryData todos={todo}/>} />
       </Routes>
     </BrowserRouter>
   );
