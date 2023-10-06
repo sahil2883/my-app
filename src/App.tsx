@@ -5,7 +5,7 @@ import Home, { todosTypes } from "./frontend/Home";
 import Lists from "./frontend/Lists";
 import { useState } from "react";
 import CompleteTask from "./frontend/CompleteTask";
-import HistoryData from "./frontend/HistoryData";
+import HistoryData from "./frontend/HistoryData"; 
 
 function App() {
   const [todo, setTodos] = useState<[] | todosTypes[]>([]);
